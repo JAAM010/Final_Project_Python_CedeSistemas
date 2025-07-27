@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contenidos-container">
+    <h1 class="title">🎬 Contenidos Disponibles</h1>
+    
+    <div class="contenidos-grid">
+        {% for contenido in contenidos %}
+        <div class="card">
+            <img src="{{ url_for('static', path='images/peliculas.jpg') }}" alt="{{ contenido.titulo }}" class="card-img">
+            <div class="card-body">
+                <h2 class="card-title">{{ contenido.titulo }}</h2>
+                <p class="card-description">{{ contenido.descripcion }}</p>
+                <span class="card-tipo">{{ contenido.tipo }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
